@@ -20,7 +20,8 @@ RUN apt-get install -y \
     libjpeg-dev \
     zlib1g-dev \
     libfreetype6-dev \
-    python-virtualenv
+    python-virtualenv \
+    unzip
 RUN pip install shapely eventlet pillow mapnik python-memcached boto tilestache pyproj gunicorn 
 
 EXPOSE 8080
