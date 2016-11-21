@@ -21,8 +21,14 @@ RUN apt-get install -y \
     zlib1g-dev \
     libfreetype6-dev \
     python-virtualenv \
+    git \
     unzip
-RUN pip install shapely eventlet pillow mapnik python-memcached boto tilestache pyproj gunicorn 
+RUN pip install --upgrade pip
+RUN pip install shapely eventlet pillow mapnik python-memcached boto pyproj gunicorn 
+
+ADD TileStache /TileStache
+
+RUN cd TileStache && python setup.py install
 
 EXPOSE 8080
 
